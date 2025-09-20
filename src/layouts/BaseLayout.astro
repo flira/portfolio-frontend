@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "A modern portfolio website built with Astro and Lit" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style lang="scss">
+  @use '../styles/global.scss';
+</style>

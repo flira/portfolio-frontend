@@ -1,0 +1,50 @@
+{
+  "name": "portfolio-frontend",
+  "version": "1.0.0",
+  "description": "Modern portfolio website built with Astro.js, Lit, SCSS, and accessibility testing",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "a11y:axe": "echo 'Run axe tests on built site manually'",
+    "a11y:pa11y": "echo 'Install pa11y-ci for automated accessibility testing'",
+    "lighthouse": "echo 'Run lighthouse on built site manually'"
+  },
+  "keywords": [
+    "astro",
+    "lit",
+    "scss",
+    "css-modules",
+    "accessibility",
+    "portfolio",
+    "vitest"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/lit": "^4.3.0",
+    "@astrojs/node": "^9.4.3",
+    "@webcomponents/template-shadowroot": "^0.2.1",
+    "astro": "^5.13.9",
+    "lit": "^3.3.1",
+    "sass": "^1.93.0",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@open-wc/testing": "^4.0.0",
+    "@types/jest-axe": "^3.5.9",
+    "@types/jsdom": "^21.1.7",
+    "@vitest/ui": "^3.2.4",
+    "axe-core": "^4.10.3",
+    "jest-axe": "^10.0.0",
+    "jsdom": "^27.0.0",
+    "vitest": "^3.2.4"
+  }
+}
