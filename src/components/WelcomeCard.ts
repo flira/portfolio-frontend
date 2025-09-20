@@ -18,12 +18,12 @@ export class WelcomeCard extends LitElement {
     }
 
     .card {
-      background: white;
+      background: var(--background-color, #ffffff);
       border-radius: 0.5rem;
       padding: 2rem;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      border: 1px solid #e5e7eb;
-      transition: transform 150ms ease-in-out, box-shadow 150ms ease-in-out;
+      border: 1px solid var(--gray-200, #e5e7eb);
+      transition: transform var(--transition-fast, 150ms ease-in-out), box-shadow var(--transition-fast, 150ms ease-in-out);
     }
 
     .card:hover {
@@ -34,12 +34,12 @@ export class WelcomeCard extends LitElement {
     .title {
       font-size: 1.5rem;
       font-weight: 600;
-      color: #1f2937;
+      color: var(--text-color, #1f2937);
       margin: 0 0 1rem 0;
     }
 
     .description {
-      color: #6b7280;
+      color: var(--gray-500, #6b7280);
       line-height: 1.6;
       margin: 0;
     }
@@ -48,7 +48,6 @@ export class WelcomeCard extends LitElement {
       .card {
         padding: 2.5rem;
       }
-      
       .title {
         font-size: 1.875rem;
       }
