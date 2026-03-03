@@ -1,0 +1,94 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const { 
+  title = "Astro + CSS Modules", 
+  subtitle = "This component demonstrates CSS Modules with SCSS preprocessing" 
+} = Astro.props;
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="title">{title}</h1>
+    <p class="subtitle">{subtitle}</p>
+    <button class="cta-button" type="button">
+      Get Started
+    </button>
+  </div>
+</section>
+
+<style lang="scss">
+  @use 'sass:color';
+  @use '../styles/variables' as *;
+
+  .hero {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: white;
+    padding: $spacing-16 0;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 $spacing-4;
+  }
+
+  .title {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    margin: 0 0 $spacing-6 0;
+    line-height: 1.2;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 3.5rem;
+    }
+  }
+
+  .subtitle {
+    font-size: $font-size-lg;
+    margin: 0 0 $spacing-8 0;
+    opacity: 0.9;
+    line-height: 1.6;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  .cta-button {
+    background: $accent-color;
+    color: white;
+    border: none;
+    padding: $spacing-4 $spacing-8;
+    font-size: $font-size-lg;
+    font-weight: 600;
+    border-radius: $border-radius-lg;
+    cursor: pointer;
+    transition: all $transition-normal;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+
+    &:hover {
+      background: color.adjust($accent-color, $lightness: -10%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+</style>

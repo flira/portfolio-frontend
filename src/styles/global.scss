@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+/* CSS Custom Properties for color variables (from _variables.scss) */
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #1e40af;
+  --accent-color: #06b6d4;
+  --text-color: #1f2937;
+  --background-color: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  /* Add more as needed */
+}
+
+/* Reset and base styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: $background-color;
+  color: $text-color;
+  font-size: $font-size-base;
+  line-height: 1.6;
+}
+
+/* Focus management for accessibility */
+:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: $primary-color;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: $border-radius-md;
+  z-index: 1000;
+  transition: top $transition-fast;
+
+  &:focus {
+    top: 6px;
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-4;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 0 $spacing-6;
+  }
+}
